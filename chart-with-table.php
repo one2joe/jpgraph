@@ -8,7 +8,7 @@ use Amenadiel\JpGraph\Plot;
 use Amenadiel\JpGraph\Text;
 
 $datay = [
-	array('Jan','Feb','Mar','Apr','May','Jun'),
+	array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','ม.ย.'),
 	array(12, 18, 19, 7, 17, 6), 
 	array(3, 5, 2, 7, 5, 25), 
 	array(6, 1.5, 2.4, 2.1, 6.9, 12.3)
@@ -30,6 +30,13 @@ $graph->img->SetMargin($tablexpos, $rightmargin, $topmargin, $height - $tableypo
 $graph->SetScale('textlin');
 $graph->SetMarginColor('white');
 
+$graph->SetUserFont(
+	'D:\wamp64\www\jpgraph\fonts\THSarabunNew.ttf',
+	'D:\wamp64\www\jpgraph\fonts\THSarabunNew Bold.ttf',
+	'D:\wamp64\www\jpgraph\fonts\THSarabunNew Italic.ttf',
+	'D:\wamp64\www\jpgraph\fonts\THSarabunNew BoldItalic.ttf'
+);
+
 // Create the bars and the accbar plot
 $bplot = new Plot\BarPlot($datay[3]);
 $bplot->SetFillColor('orange');
@@ -45,15 +52,15 @@ $table = new Text\GTextTable();
 $table->Set($datay);
 $table->SetPos($tablexpos, $tableypos + 30);
 
-$table->SetFont(FF_ARIAL, FS_NORMAL, 10);
+$table->SetFont(FF_USERFONT, FS_NORMAL, 15);
 $table->SetAlign('right');
 $table->SetMinColWidth($cellwidth);
 $table->SetNumberFormat('%0.1f');
 
 // Format table header row
 $table->SetRowFillColor(0,'teal@0.7');
-$table->SetRowFont(0, FF_ARIAL, FS_BOLD, 11);
-$table->SetRowAlign(0,'center');
+$table->SetRowFont(0, FF_USERFONT, FS_BOLD, 16);
+$table->SetRowAlign(0, 'center');
 
 // .. and add it to the graph
 $graph->Add($table);

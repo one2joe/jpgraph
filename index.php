@@ -53,6 +53,7 @@ $table->SetNumberFormat('%0.1f');
 $table->SetRowFillColor(0,'teal@0.7');
 $table->SetRowFont(0,FF_ARIAL,FS_BOLD,11);
 $table->SetRowAlign(0,'center');
+$table->SetRowAlign(0,'bottom');
 
 // .. and add it to the graph
 $graph->Add($table);
