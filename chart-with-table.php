@@ -8,20 +8,20 @@ use Amenadiel\JpGraph\Plot;
 use Amenadiel\JpGraph\Text;
 
 $datay = array(
-    array('Jan','Feb','Mar','Apr','May','Jun'),
-    array(12,18,19,7,17,6),
-    array(3,5,2,7,5,25),
-    array(6,1.5,2.4,2.1,6.9,12.3));
+array('Jan','Feb','Mar','Apr','May','Jun'),
+array(12,18,19,7,17,6),
+array(3,5,2,7,5,25),
+array(6,1.5,2.4,2.1,6.9,12.3));
 
-	$nbrbar = 6; // number of bars and hence number of columns in table
-	$cellwidth = 50;  // width of each column in the table
-	$tableypos = 200; // top left Y-coordinate for table
-	$tablexpos = 60;  // top left X-coordinate for table
-	$tablewidth = $nbrbar*$cellwidth; // overall table width
-	$rightmargin = 30;  // right margin in the graph
-	$topmargin = 30;  // top margin of graph
+$nbrbar = 6; // number of bars and hence number of columns in table
+$cellwidth = 50;  // width of each column in the table
+$tableypos = 200; // top left Y-coordinate for table
+$tablexpos = 60;  // top left X-coordinate for table
+$tablewidth = $nbrbar*$cellwidth; // overall table width
+$rightmargin = 30;  // right margin in the graph
+$topmargin = 30;  // top margin of graph
 
-	$height = 320;  // a suitable height for the image
+$height = 320;  // a suitable height for the image
 $width = $tablexpos+$tablewidth+$rightmargin; // the width of the image
 
 $graph = new Graph\Graph($width, $height);	
