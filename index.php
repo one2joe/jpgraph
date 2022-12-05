@@ -25,7 +25,7 @@ $datay = array(
 $width = $tablexpos+$tablewidth+$rightmargin; // the width of the image
 
 $graph = new Graph\Graph($width, $height);	
-$graph->img->SetMargin($tablexpos,$rightmargin,$topmargin,$height-$tableypos);
+$graph->img->SetMargin($tablexpos, $rightmargin, $topmargin, $height - $tableypos);
 $graph->SetScale('textlin');
 $graph->SetMarginColor('white');
 
@@ -55,7 +55,7 @@ $table->SetRowFont(0,FF_ARIAL,FS_BOLD,11);
 $table->SetRowAlign(0,'center');
 
 // .. and add it to the graph
-$graph->Add($table);
+// $graph->Add($table);
 $graph->Stroke();
 
 // $graph = new Graph\CanvasGraph(800,	600);
