@@ -39,10 +39,16 @@ $graph->SetUserFont(
 
 // Create the bars and the accbar plot
 $bplot = new Plot\BarPlot($datay[3]);
+// $bplot->SetColor("#FFFFFF");
+$bplot->SetWeight(0);
 $bplot->SetFillColor('orange');
 $bplot2 = new Plot\BarPlot($datay[2]);
+// $bplot2->SetColor("#FFFFFF");
+$bplot2->SetWeight(0);
 $bplot2->SetFillColor('red');
 $bplot3 = new Plot\BarPlot($datay[1]);
+// $bplot3->SetColor("#FFFFFF");
+$bplot3->SetWeight(0);
 $bplot3->SetFillColor('darkgreen');
 $accbplot = new Plot\AccBarPlot(array($bplot, $bplot2, $bplot3));
 $accbplot->value->Show();
@@ -52,15 +58,23 @@ $table = new Text\GTextTable();
 $table->Set($datay);
 $table->SetPos($tablexpos, $tableypos + 30);
 
+$table->SetGrid(0);
+
 $table->SetFont(FF_USERFONT, FS_NORMAL, 15);
-$table->SetAlign('right');
+$table->SetAlign('right', 'bottom');
 $table->SetMinColWidth($cellwidth);
 $table->SetNumberFormat('%0.1f');
 
 // Format table header row
-$table->SetRowFillColor(0,'teal@0.7');
+$table->SetRowFillColor(0, 'teal@0.7');
 $table->SetRowFont(0, FF_USERFONT, FS_BOLD, 16);
-$table->SetRowAlign(0, 'center');
+$table->SetRowAlign(0, 'center', 'bottom');
+// $table->SetColGrid(1, 0);
+// $table->SetColGrid(2, 0);
+// $table->SetColGrid(3, 0);
+// $table->SetColGrid(4, 0);
+// $table->SetColGrid(5, 0);
+// $table->SetRowGrid(1, 10, '#FF0000', TGRID_DOUBLE);
 
 // .. and add it to the graph
 $graph->Add($table);
