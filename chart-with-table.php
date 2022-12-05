@@ -40,22 +40,22 @@ $accbplot = new Plot\AccBarPlot(array($bplot,$bplot2,$bplot3));
 $accbplot->value->Show();
 $graph->Add($accbplot);
 
-// $table = new Text\GTextTable();
-// $table->Set($datay);
-// $table->SetPos($tablexpos,$tableypos+1);
+$table = new Text\GTextTable();
+$table->Set($datay);
+$table->SetPos($tablexpos,$tableypos+1);
 
-// $table->SetFont(FF_ARIAL,FS_NORMAL,10);
-// $table->SetAlign('right');
-// $table->SetMinColWidth($cellwidth);
-// $table->SetNumberFormat('%0.1f');
+$table->SetFont(FF_ARIAL,FS_NORMAL,10);
+$table->SetAlign('right');
+$table->SetMinColWidth($cellwidth);
+$table->SetNumberFormat('%0.1f');
 
-// // Format table header row
-// $table->SetRowFillColor(0,'teal@0.7');
-// $table->SetRowFont(0,FF_ARIAL,FS_BOLD,11);
-// $table->SetRowAlign(0,'center');
+// Format table header row
+$table->SetRowFillColor(0,'teal@0.7');
+$table->SetRowFont(0,FF_ARIAL,FS_BOLD,11);
+$table->SetRowAlign(0,'center');
 
-// // .. and add it to the graph
-// $graph->Add($table);
+// .. and add it to the graph
+$graph->Add($table);
 $graph->Stroke();
 
 // $graph = new Graph\CanvasGraph(800,	600);
