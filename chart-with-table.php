@@ -78,7 +78,7 @@ $table->SetRowAlign(0, 'center', 'bottom');
 
 // .. and add it to the graph
 $graph->Add($table);
-$graph->Stroke();
+$graph->Stroke('test.png');
 
 // $graph = new Graph\CanvasGraph(800,	600);
 
