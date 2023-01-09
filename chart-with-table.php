@@ -1,11 +1,11 @@
 <?php
 require 'vendor/autoload.php';
 
-require_once __DIR__ . '\vendor\amenadiel\jpgraph\src\config.inc.php';
+// require_once __DIR__ . '\vendor\amenadiel\jpgraph\src\config.inc.php';
 
-use Amenadiel\JpGraph\Graph;
-use Amenadiel\JpGraph\Plot;
-use Amenadiel\JpGraph\Text;
+// use Amenadiel\JpGraph\Graph;
+// use Amenadiel\JpGraph\Plot;
+// use Amenadiel\JpGraph\Text;
 
 $datay = [
 	array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','ม.ย.'),
@@ -25,7 +25,7 @@ $topmargin = 30;  // top margin of graph
 $height = 350;  // a suitable height for the image
 $width = $tablexpos + $tablewidth + $rightmargin; // the width of the image
 
-$graph = new Graph\Graph($width, $height);	
+$graph = new \Amenadiel\JpGraph\Graph\Graph($width, $height);	
 $graph->img->SetMargin($tablexpos, $rightmargin, $topmargin, $height - $tableypos);
 $graph->SetScale('textlin');
 $graph->SetMarginColor('white');
@@ -38,23 +38,23 @@ $graph->SetUserFont(
 );
 
 // Create the bars and the accbar plot
-$bplot = new Plot\BarPlot($datay[3]);
+$bplot = new \Amenadiel\JpGraph\Plot\BarPlot($datay[3]);
 // $bplot->SetColor("#FFFFFF");
 $bplot->SetWeight(0);
 $bplot->SetFillColor('orange');
-$bplot2 = new Plot\BarPlot($datay[2]);
+$bplot2 = new \Amenadiel\JpGraph\Plot\BarPlot($datay[2]);
 // $bplot2->SetColor("#FFFFFF");
 $bplot2->SetWeight(0);
 $bplot2->SetFillColor('red');
-$bplot3 = new Plot\BarPlot($datay[1]);
+$bplot3 = new \Amenadiel\JpGraph\Plot\BarPlot($datay[1]);
 // $bplot3->SetColor("#FFFFFF");
 $bplot3->SetWeight(0);
 $bplot3->SetFillColor('darkgreen');
-$accbplot = new Plot\AccBarPlot(array($bplot, $bplot2, $bplot3));
+$accbplot = new \Amenadiel\JpGraph\Plot\AccBarPlot(array($bplot, $bplot2, $bplot3));
 $accbplot->value->Show();
 $graph->Add($accbplot);
 
-$table = new Text\GTextTable();
+$table = new \Amenadiel\JpGraph\Text\GTextTable();
 $table->Set($datay);
 $table->SetPos($tablexpos, $tableypos + 30);
 
@@ -78,7 +78,8 @@ $table->SetRowAlign(0, 'center', 'bottom');
 
 // .. and add it to the graph
 $graph->Add($table);
-$graph->Stroke('test.png');
+// $graph->Stroke('test.png');
+$graph->Stroke();
 
 // $graph = new Graph\CanvasGraph(800,	600);
 
